@@ -759,3 +759,11 @@
 		{
 			color: #777;
 		}
+
+
+
+		img.wide-architech-logo {
+			background-color: black;
+			width: 60%;
+			padding: 3%;
+		}

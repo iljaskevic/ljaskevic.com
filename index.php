@@ -103,7 +103,7 @@
 						<div class="row">
 							<div class="12u">
 								<section class="box style1">
-									<img src="images/architech_new_logo.svg"></img>
+									<img class="wide-architech-logo" src="images/architech_new_logo.svg"></img>
 									<!--<span class="icon featured fa-comments-o"></span>-->
 									<h3>Senior Software Engineer</h3>
 									<h4>[Mar. 2017 - Current]</h4>

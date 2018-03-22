@@ -99,13 +99,26 @@
 						<h2>Here's what he does.</h2>
 						<p>Current and previous work experience.</p>
 					</header>
-					<div class="container"><div class="row">
+					<div class="container">
+						<div class="row">
+							<div class="12u">
+								<section class="box style1">
+									<img src="images/architech_new_logo.svg"></img>
+									<!--<span class="icon featured fa-comments-o"></span>-->
+									<h3>Senior Software Engineer</h3>
+									<h4>[Mar. 2017 - Current]</h4>
+									<p>Delivery, Architech</p>
+								</section>
+
+							</div>
+						</div>
+						<div class="row">
 							<div class="6u">
 								<section class="box style1">
 									<img src="images/architech_logo.png"></img>
 									<!--<span class="icon featured fa-comments-o"></span>-->
 									<h3>Intermediate Developer</h3>
-									<h4>[Mar. 2015 - Current]</h4>
+									<h4>[Mar. 2015 - Mar. 2017]</h4>
 									<p>Delivery, Architech</p>
 								</section>
 

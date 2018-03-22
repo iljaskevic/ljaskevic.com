@@ -3,7 +3,7 @@
 
 $yourEmail = "igor.ljaskevic@gmail.com"; // the email address you wish to receive these mails through
 $yourWebsite = "Igor's Portfolio Website"; // the name of your website
-$thanksPage = '/#contact'; // URL to 'thanks for sending mail' page; leave empty to keep message on the same page 
+$thanksPage = '/#contact'; // URL to 'thanks for sending mail' page; leave empty to keep message on the same page
 $maxPoints = 4; // max points a person can hit before it refuses to submit - recommend 4
 $requiredFields = "name,email"; // names of the fields you'd like to be required as a minimum, separate each field with a comma
 
@@ -27,27 +27,27 @@ function isBot() {
 
 	if (empty($_SERVER['HTTP_USER_AGENT']) || $_SERVER['HTTP_USER_AGENT'] == " ")
 		return true;
-	
+
 	return false;
 }
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	if (isBot() !== false)
 		$error_msg[] = "No bots please! UA reported as: ".$_SERVER['HTTP_USER_AGENT'];
-		
-	// lets check a few things - not enough to trigger an error on their own, but worth assigning a spam score.. 
+
+	// lets check a few things - not enough to trigger an error on their own, but worth assigning a spam score..
 	// score quickly adds up therefore allowing genuine users with 'accidental' score through but cutting out real spam :)
 	$points = (int)0;
-	
+
 	$badwords = array("adult", "beastial", "bestial", "blowjob", "clit", "cum", "cunilingus", "cunillingus", "cunnilingus", "cunt", "ejaculate", "fag", "felatio", "fellatio", "fuck", "fuk", "fuks", "gangbang", "gangbanged", "gangbangs", "hotsex", "hardcode", "jism", "jiz", "orgasim", "orgasims", "orgasm", "orgasms", "phonesex", "phuk", "phuq", "pussies", "pussy", "spunk", "xxx", "viagra", "phentermine", "tramadol", "adipex", "advai", "alprazolam", "ambien", "ambian", "amoxicillin", "antivert", "blackjack", "backgammon", "texas", "holdem", "poker", "carisoprodol", "ciara", "ciprofloxacin", "debt", "dating", "porn", "link=", "voyeur", "content-type", "bcc:", "cc:", "document.cookie", "onclick", "onload", "javascript");
 
 	foreach ($badwords as $word)
 		if (
-			strpos(strtolower($_POST['comments']), $word) !== false || 
+			strpos(strtolower($_POST['comments']), $word) !== false ||
 			strpos(strtolower($_POST['name']), $word) !== false
 		)
 			$points += 2;
-	
+
 	if (strpos($_POST['comments'], "http://") !== false || strpos($_POST['comments'], "www.") !== false)
 		$points += 2;
 	if (isset($_POST['nojs']))
@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 	foreach($requiredFields as $field) {
 		trim($_POST[$field]);
-		
+
 		if (!isset($_POST[$field]) || empty($_POST[$field]) && array_pop($error_msg) != "Please fill in all the required fields and submit again.\r\n")
 			$error_msg[] = "Please fill in all the required fields and submit again.";
 	}
@@ -75,10 +75,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$error_msg[] = "That is not a valid e-mail address.\r\n";
 	if (!empty($_POST['url']) && !preg_match('/^(http|https):\/\/(([A-Z0-9][A-Z0-9_-]*)(\.[A-Z0-9][A-Z0-9_-]*)+)(:(\d+))?\/?/i', $_POST['url']))
 		$error_msg[] = "Invalid website url.\r\n";
-	
+
 	if ($error_msg == NULL && $points <= $maxPoints) {
 		$subject = "Automatic Form Email";
-		
+
 		$message = "You received this e-mail message through your website: \n\n";
 		foreach ($_POST as $key => $val) {
 			if (is_array($val)) {
@@ -97,7 +97,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		if (strstr($_SERVER['SERVER_SOFTWARE'], "Win")) {
 			$headers   = "From: $yourEmail\r\n";
 		} else {
-			$headers   = "From: $yourWebsite <$yourEmail>\r\n";	
+			$headers   = "From: $yourWebsite <$yourEmail>\r\n";
 		}
 		$headers  .= "Reply-To: {$_POST['email']}\r\n";
 

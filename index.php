@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Igor Ljaskevic Portfolio</title>
+		<title>Igor2 Ljaskevic Portfolio</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -112,7 +112,7 @@
 									<h4>[Mar. 2015 - Current]</h4>
 									<p>Delivery, Architech</p>
 								</section>
-								
+
 							</div>
 							<div class="6u">
 								<section class="box style1">
@@ -122,7 +122,7 @@
 									<h4>[Dec. 2014 - Mar. 2015]</h4>
 									<p>Innovation Lab, Architech</p>
 								</section>
-								
+
 							</div>
 						</div>
 						<div class="row">
@@ -316,7 +316,7 @@ if ($result != NULL) {
 									<!--<li><a href="#" class="icon fa-tumblr"><span class="label">Tumblr</span></a></li>
 									<li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
 									<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
-									
+
 									<li><a href="#" class="icon fa-rss"><span>RSS</span></a></li>
 									<li><a href="#" class="icon fa-instagram"><span>Instagram</span></a></li>
 									<li><a href="#" class="icon fa-foursquare"><span>Foursquare</span></a></li>
